@@ -16,7 +16,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-1"
 }
 
 resource "random_pet" "sg" {}
@@ -51,6 +51,7 @@ resource "aws_instance" "web" {
               systemctl restart apache2
               EOF
 }
+
 
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
